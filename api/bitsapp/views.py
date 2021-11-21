@@ -22,6 +22,7 @@ def customerAPI(request):
 
 
 
+
 # ============================================
 # ====== FRONTEND - DESIGN TEMPLATE ==========
 # ============================================
@@ -44,7 +45,7 @@ def product(request):
 
 # Customer Page
 def customer(request):
-    customershow = requests.get('http://127.0.0.1:8000/api/customerAPI/?format=json')
+    customershow = requests.get('http://127.0.0.1:8000/api/customer/')
     results = customershow.json()
 
     return render(request,'dashboard/customer.html', {'CustomerModel':results})
