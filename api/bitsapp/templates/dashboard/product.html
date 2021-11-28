@@ -44,8 +44,8 @@
                         <th>Product Name</th>
                         <th>Unit Price</th>
                         <th>Total Qty</th>
-                        <th>Remain Qty</th>
-                        <th>Category</th>
+                        {% comment %} <th>Remain Qty</th>
+                        <th>Category</th> {% endcomment %}
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -55,21 +55,21 @@
                         <th>Product Name</th>
                         <th>Unit Price</th>
                         <th>Total Qty</th>
-                        <th>Remain Qty</th>
-                        <th>Category</th>
+                        {% comment %} <th>Remain Qty</th>
+                        <th>Category</th> {% endcomment %}
                         <th>Action</th>
                       </tr>
                     </tfoot>
                     <tbody>
+                      {% for products in ProductModel %}
                         <tr>
-                            <td>1</td>
-                            <td>Sneakers</td>
-                            <td>10000</td>
-                            <td>20</td>
-                            <td>0</td>
-                            <td>Shoe</td>
-                            <td><a href="#"><i class="fa fa-edit"></i><a></td>
+                          <td>{{products.id}}</td>
+                          <td>{{products.product_name}}</td>
+                          <td>{{products.unity_price}}</td>
+                          <td>{{products.quantity}}</td>
+                          <td><a href="{% url '/product_detail' %}"><i class="fa fa-edit"></i><a></td>
                         </tr>
+                      {% endfor%}
                     </tbody>
                   </table>
                 </div>
@@ -83,7 +83,9 @@
                   <h6 class="m-0 font-weight-bold text-primary">List of all Categories</h6>
                 </div>
                 <div class="card-body">
-                  <a href="#" class="btn btn-outline-success mb-1">Shoe</a>
+                  {% for data in CategoryModel %}
+                    <a href="#" class="btn btn-outline-success mb-1">{{data.category_name}}</a>
+                  {% endfor %}
                   
                 </div>
               </div>

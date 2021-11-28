@@ -2,7 +2,7 @@ from django.db import models
 
 # Customers DB Table
 class CustomerModel(models.Model):
-    admin_id = models.CharField(max_length=10)
+    # admin_id = models.CharField(max_length=10)
     fullname = models.CharField(max_length=122)
     email = models.CharField(max_length=122)
     phone = models.CharField(max_length=30)

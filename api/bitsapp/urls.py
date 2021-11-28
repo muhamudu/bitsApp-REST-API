@@ -12,5 +12,6 @@ urlpatterns = [
     path('dashboard/dashboard/', views.dashboard, name="dashboard"),
     path('dashboard/employee/', views.employee, name='employee'),
     path("dashboard/product/", views.product, name='product'),
+    path("dashboard/product_detail/<int:pk>/", views.product_detail, name='product_detail'),
     path('dashboard/customer/', views.customer, name="customer"),
 ]

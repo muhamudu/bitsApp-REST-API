@@ -20,5 +20,6 @@ from .router import router
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('bitsapp.urls')),
-    path('api/',include(router.urls))
+    path('api/',include(router.urls)),
+    path("accounts/", include('django.contrib.auth.urls'))
 ]
